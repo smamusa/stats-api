@@ -32,22 +32,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/stackrep', (req, res) => {
-  let rep = getReputation();
-  response.label = 'stackoverflow rep';
-  response.message = rep;
-  response.color = 'yellow';
-  res.send(response);
+  axios
+    .get('https://api.stackexchange.com/users/5290070?site=stackoverflow')
+    .then((result) => {
+      response.label = 'stackoverflow rep';
+      response.message = result.data.items[0].reputation;
+      response.color = 'yellow';
+      res.send(response);
+    });
 });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-async function getReputation() {
-  try {
-    const response = await axios.get(
-      'https://api.stackexchange.com/users/5290070?site=stackoverflow'
-    );
-    return response.data.items[0].reputation;
-  } catch (error) {}
-}
