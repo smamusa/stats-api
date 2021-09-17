@@ -36,7 +36,7 @@ app.get('/stackrep', (req, res) => {
     .get('https://api.stackexchange.com/users/5290070?site=stackoverflow')
     .then((result) => {
       response.label = 'stackoverflow rep';
-      response.message = result.data.items[0].reputation;
+      response.message = String(result.data.items[0].reputation);
       response.color = 'yellow';
       res.send(response);
     });
