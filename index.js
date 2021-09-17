@@ -14,7 +14,7 @@ const response = {
 };
 
 app.get('/', (req, res) => {
-  res.send(Object.values(response));
+  res.send(response);
 });
 
 app.listen(port, () => {
