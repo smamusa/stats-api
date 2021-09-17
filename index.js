@@ -1,5 +1,7 @@
 const express = require('express');
 const axios = require('axios');
+const cheerio = require('cheerio');
+const got = require('got');
 const app = express();
 
 let port = process.env.PORT;
@@ -40,6 +42,30 @@ app.get('/stackrep', (req, res) => {
         color: 'yellow',
       });
     });
+});
+
+app.get('/matlab-answers-rank', (req, res) => {
+  const matlabProfileUrl =
+    'https://www.mathworks.com/matlabcentral/profile/authors/21973659';
+
+  got(matlabProfileUrl).then((response) => {
+    const $ = cheerio.load(response.body);
+    const rankInfoArray = $('#answers_metrics p').html().split('<br>');
+    const re1 = new RegExp('>(.*?)<');
+    const re2 = new RegExp('of\\s(.*?)\\n');
+    res.send({
+      schemaVersion: 1,
+      label: 'MATLAB Answers Rank',
+      message: `${rankInfoArray[1].match(re1)[1]} of ${
+        rankInfoArray[2].match(re2)[1]
+      }`,
+      labelColor: 'orange',
+      color: 'blue',
+    });
+    console.log(
+      `${rankInfoArray[1].match(re1)[1]} of ${rankInfoArray[2].match(re2)[1]}`
+    );
+  });
 });
 
 app.listen(port, () => {
