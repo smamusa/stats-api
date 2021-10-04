@@ -1,2 +1,2 @@
-# stats-api
+# mystats-api
 Simple stats proxy api
