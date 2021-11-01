@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.send({
     schemaVersion: 1,
     label: 'mystats-api',
-    message: 'Hello World !',
+    message: 'Working !',
     color: 'green',
   });
 });
