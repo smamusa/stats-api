@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     schemaVersion: 1,
     label: 'mystats-api',
     message: 'Hello World !',
-    color: 'orange',
+    color: 'green',
   });
 });
 

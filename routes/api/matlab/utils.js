@@ -10,16 +10,16 @@ const payload = (label, text) => {
       schemaVersion: 1,
       label: label,
       message: `${rank} of ${total}`,
-      labelColor: 'orange',
-      color: 'blue',
+      labelColor: 'blue',
+      color: 'orange',
     };
   } else
     return {
       schemaVersion: 1,
       label: label,
       message: rank,
-      labelColor: 'orange',
-      color: 'blue',
+      labelColor: 'blue',
+      color: 'orange',
     };
 };
 
