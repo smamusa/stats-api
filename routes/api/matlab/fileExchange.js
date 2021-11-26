@@ -4,6 +4,7 @@ const { payload, url } = require('./utils');
 
 const cheerio = require('cheerio');
 const got = require('got');
+const reputation = require('./fileExchangeReputation');
 
 fileExchange.get('/', (req, res) => {
   got(url).then((response) => {
@@ -17,6 +18,6 @@ fileExchange.get('/', (req, res) => {
   });
 });
 
-fileExchange.use('/reputation', require('./fileExchangeReputation'));
+fileExchange.use('/reputation', reputation);
 
 module.exports = fileExchange;
