@@ -10,7 +10,7 @@ fileExchangeReputation.get('/', (req, res) => {
     const $ = cheerio.load(response.body);
     res.send(
       payload(
-        'MATLAB Answers Reputation',
+        'MATLAB File Exchange Reputation',
         $('#fileexchange_metrics p:nth-child(2)').text()
       )
     );

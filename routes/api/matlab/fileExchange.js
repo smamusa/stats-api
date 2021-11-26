@@ -5,6 +5,9 @@ const { payload, url } = require('./utils');
 const cheerio = require('cheerio');
 const got = require('got');
 const reputation = require('./fileExchangeReputation');
+const averageRating = require('./fileExchangeAverageRating');
+const contributions = require('./fileExchangeContributions');
+const downloads = require('./fileExchangeDownloads');
 
 fileExchange.get('/', (req, res) => {
   got(url).then((response) => {
@@ -19,5 +22,8 @@ fileExchange.get('/', (req, res) => {
 });
 
 fileExchange.use('/reputation', reputation);
+fileExchange.use('/averageRating', averageRating);
+fileExchange.use('/contributions', contributions);
+fileExchange.use('/downloads', downloads);
 
 module.exports = fileExchange;
