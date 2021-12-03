@@ -25,12 +25,12 @@ let port = process.env.PORT || 10000;
 // Init cache
 let cache = apicache.middleware;
 // Use the cache globally
-app.use(cache('10 minutes'));
+app.use(cache('1 hour'));
 
 // Create the rate limit rule
 const apiRequestLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 10, // limit each IP to 10 requests per windowMs
+  max: 100, // limit each IP to 100 requests per windowMs
 });
 // Use the limit rule as an application middleware
 app.use(apiRequestLimiter);

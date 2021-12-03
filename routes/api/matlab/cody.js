@@ -4,8 +4,6 @@ const { payload, url } = require('./utils');
 
 const cheerio = require('cheerio');
 const got = require('got');
-const codyScore = require('./codyScore');
-const codyBadges = require('./codyBadges');
 
 cody.get('/', (req, res) => {
   got(url).then((response) => {
@@ -16,7 +14,7 @@ cody.get('/', (req, res) => {
   });
 });
 
-cody.use('/score', codyScore);
-cody.use('/badges', codyBadges);
+cody.use('/score', require('./codyScore'));
+cody.use('/badges', require('./codyBadges'));
 
 module.exports = cody;
