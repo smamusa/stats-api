@@ -1,6 +1,12 @@
-const profileId = '21973659';
-const url = `https://www.mathworks.com/matlabcentral/profile/authors/${profileId}`;
+const url = `https://www.mathworks.com/matlabcentral/profile/authors/${process.env.MATLAB_PROFILE_ID}`;
 const regex = new RegExp('\\d+\\,?\\d*', 'g');
+const response = {
+  schemaVersion: 1,
+  label: '',
+  message: '',
+  labelColor: 'blue',
+  color: 'orange',
+};
 
 const payload = (label, text) => {
   const rank = text.match(regex)[0];
@@ -9,27 +15,21 @@ const payload = (label, text) => {
     // For Average Rating only
     if (text.includes('AVERAGE')) {
       return {
-        schemaVersion: 1,
+        ...response,
         label: label,
         message: `${rank}.${total}`,
-        labelColor: 'blue',
-        color: 'orange',
       };
     }
     return {
-      schemaVersion: 1,
+      ...response,
       label: label,
       message: `${rank} of ${total}`,
-      labelColor: 'blue',
-      color: 'orange',
     };
   } else
     return {
-      schemaVersion: 1,
+      ...response,
       label: label,
       message: rank,
-      labelColor: 'blue',
-      color: 'orange',
     };
 };
 

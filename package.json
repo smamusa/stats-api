@@ -12,9 +12,15 @@
   "author": "Stjepan Mamusa",
   "license": "ISC",
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.21.0",
+    "apicache": "^1.6.3",
     "axios": "^0.21.4",
     "cheerio": "^1.0.0-rc.10",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "got": "^11.8.2"
+    "express-rate-limit": "^5.5.1",
+    "got": "^11.8.2",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
   }
 }
