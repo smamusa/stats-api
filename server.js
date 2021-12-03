@@ -35,14 +35,14 @@ const apiRequestLimiter = rateLimit({
 // Use the limit rule as an application middleware
 app.use(apiRequestLimiter);
 
-// Main router
-app.use('/api', require('./routes'));
-
 // Get Stackoverflow reputation
 app.use(
   '/api/stackexchange/stackoverflow/reputation',
   require('./routes/api/stackexchange/stackoverflow')
 );
+
+// Main router
+app.use('/api', require('./routes'));
 
 let monitoring = new Monitoring();
 
