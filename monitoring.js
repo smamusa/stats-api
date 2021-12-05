@@ -14,7 +14,7 @@ const writeApi = client.getWriteApi(
   process.env.INFLUX_BUCKET
 );
 
-writeApi.useDefaultTags({ host: `${os.hostname}` });
+writeApi.useDefaultTags({ host: `${process.env.API_HOST}` });
 
 class Monitoring extends EventEmitter {
   constructor() {
