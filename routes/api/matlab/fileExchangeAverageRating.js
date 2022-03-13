@@ -3,7 +3,7 @@ const fileExchangeAverageRating = require('express').Router();
 const { payload, url } = require('./utils');
 
 const cheerio = require('cheerio');
-const got = require('got');
+const got = import('got');
 
 fileExchangeAverageRating.get('/', (req, res) => {
   got(url).then((response) => {

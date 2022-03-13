@@ -3,7 +3,7 @@ const fileExchange = require('express').Router();
 const { payload, url } = require('./utils');
 
 const cheerio = require('cheerio');
-const got = require('got');
+const got = import('got');
 const reputation = require('./fileExchangeReputation');
 const averageRating = require('./fileExchangeAverageRating');
 const contributions = require('./fileExchangeContributions');
