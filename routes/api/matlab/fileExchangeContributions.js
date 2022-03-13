@@ -3,7 +3,7 @@ const fileExchangeContributions = require('express').Router();
 const { payload, url } = require('./utils');
 
 const cheerio = require('cheerio');
-const got = import('got');
+const got = require('got');
 
 fileExchangeContributions.get('/', (req, res) => {
   got(url).then((response) => {
