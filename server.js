@@ -4,6 +4,10 @@ const apicache = require('apicache');
 const Monitoring = require('./monitoring');
 const winston = require('winston');
 
+/**
+ * @todo Remove all unusued code
+ */
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
@@ -18,6 +22,8 @@ const logger = winston.createLogger({
 require('dotenv').config();
 
 const app = express();
+
+app.use(require('express-status-monitor')());
 
 // Get free port or port 10000
 let port = process.env.PORT || 10000;
