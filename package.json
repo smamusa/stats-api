@@ -4,7 +4,7 @@
   "description": "Simple stats API for use with Badges.io service",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -21,7 +21,6 @@
     "express-rate-limit": "^6.3.0",
     "got": "11.8.2",
     "morgan": "^1.10.0",
-    "sonarqube-scanner": "^2.8.1",
     "winston": "^3.6.0"
   },
   "devDependencies": {
@@ -30,7 +29,13 @@
     "jest-sonar-reporter": "^2.0.0"
   },
   "jest": {
-    "testResultsProcessor": "jest-sonar-reporter"
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ]
   },
   "jestSonar": {
     "reportPath": "reports",
