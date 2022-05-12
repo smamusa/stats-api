@@ -12,7 +12,7 @@
   "author": "Stjepan Mamusa",
   "license": "ISC",
   "dependencies": {
-    "@influxdata/influxdb-client": "^1.24.0",
+    "@influxdata/influxdb-client": "^1.25.0",
     "apicache": "^1.6.3",
     "axios": "^0.26.1",
     "cheerio": "^1.0.0-rc.10",
