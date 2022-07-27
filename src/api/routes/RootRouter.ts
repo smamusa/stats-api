@@ -3,15 +3,16 @@ import BadgeData from '../model/BadgeData';
 import Stackoverflow from './stackexchange/Stackoverflow';
 import MatlabRouter from './matlab/MatlabRouter';
 
-const root: Router = express();
+const RootRouter: Router = express();
 
 // Stackoverflow sub route
-root.use('/stackoverflow', Stackoverflow);
-root.use('/matlab/', MatlabRouter);
+RootRouter.use('/stackoverflow', Stackoverflow);
+// MATLAB sub route
+RootRouter.use('/matlab', MatlabRouter);
 
 // Hello World (root) route to make sure API is working
-root.use('/', (_req: Request, res: Response) => {
+RootRouter.use('/', (_req: Request, res: Response) => {
   res.send(new BadgeData('mystats-api', 'Working !', 'lightgrey', 'green'));
 });
 
-export default root;
+export default RootRouter;

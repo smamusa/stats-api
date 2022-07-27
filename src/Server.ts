@@ -1,19 +1,12 @@
-import express, { Application, Router, Request, Response } from 'express';
+import express, { Application, Request, Response } from 'express';
 import 'dotenv/config';
-import Root from './api/routes/Root';
+import RootRouter from './api/routes/RootRouter';
 
 const app: Application = express();
 const PORT = process.env.PORT || 8000;
 
 // Main router
-app.use('/api', Root);
-
-// define a route handler for the default home page
-app.get('/ping', async (_req: Request, res: Response) => {
-  res.send({
-    message: 'pong',
-  });
-});
+app.use('/api', RootRouter);
 
 // start the Express server
 app.listen(PORT, () => {
