@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-    <file path="D:\CODE\mystats-api\src\tests\utils.test.ts">
+    <file path="C:\CODE2\mystats-api\src\tests\utils.test.ts">
         <testCase name="Should return object containing proper label and message" duration="2"/>
+    </file>
+    <file path="C:\CODE2\mystats-api\dist\tests\utils.test.js">
+        <testCase name="Should return object containing proper label and message" duration="1"/>
     </file>
 </testExecutions>
