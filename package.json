@@ -8,6 +8,7 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node dist/server.js",
+    "start:prod": "node dist/server.js",
     "test": "jest --coverage",
     "dev": "nodemon dist/server.js"
   },
