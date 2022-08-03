@@ -6,9 +6,9 @@
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node dist/server.js",
-    "start:prod": "node dist/server.js",
+    "prestart:local": "npm run build",
+    "start": "node ./dist/server.js",
+    "start:local": "node ./dist/server.js",
     "test": "jest --coverage",
     "dev": "nodemon dist/server.js"
   },
