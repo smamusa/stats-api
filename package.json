@@ -13,7 +13,7 @@
     "dev": "nodemon dist/server.js"
   },
   "keywords": [],
-  "author": "Stjepan Mamusa",
+  "author": "Stjepan Mamuša",
   "license": "ISC",
   "dependencies": {
     "@influxdata/influxdb-client": "^1.28.0",
