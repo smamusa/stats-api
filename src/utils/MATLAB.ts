@@ -1,4 +1,4 @@
-import BadgeData from '../api/model/BadgeData';
+import BadgeData from '../api/model/BadgeData.js';
 
 class MATLAB {
   constructor() {

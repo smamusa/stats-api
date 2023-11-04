@@ -1,7 +1,7 @@
 import express, { Router, Request, Response } from 'express';
-import BadgeData from '../model/BadgeData';
-import Stackoverflow from './stackexchange/Stackoverflow';
-import MatlabRouter from './matlab/MatlabRouter';
+import BadgeData from '../model/BadgeData.js';
+import Stackoverflow from './stackexchange/Stackoverflow.js';
+import MatlabRouter from './matlab/MatlabRouter.js';
 
 const RootRouter: Router = express();
 

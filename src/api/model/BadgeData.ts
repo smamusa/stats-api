@@ -1,3 +1,7 @@
+/**
+ * Model for badge data
+ */
+
 export default class BadgeData {
   constructor(
     label: string,

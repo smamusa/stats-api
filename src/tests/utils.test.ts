@@ -1,5 +1,5 @@
-import expect from 'expect';
-import { MATLAB } from '../utils/MATLAB';
+import { expect, test } from '@jest/globals';
+import { MATLAB } from '../utils/MATLAB.js';
 
 const m: MATLAB = new MATLAB();
 
