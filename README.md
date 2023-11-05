@@ -1,8 +1,7 @@
 # mystats-api
 
 [![wakatime](https://wakatime.com/badge/user/dec75a58-cfdd-471b-91aa-96e43441358b/project/ad991923-b122-495e-b3da-e4050a92dc1e.svg)](https://wakatime.com/badge/user/dec75a58-cfdd-471b-91aa-96e43441358b/project/ad991923-b122-495e-b3da-e4050a92dc1e)
-
-[![Tests](https://github.com/stjepanmamusa/mystats-api/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/stjepanmamusa/mystats-api/actions/workflows/test.yml)
+[![Build](https://github.com/stjepanmamusa/mystats-api/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/stjepanmamusa/mystats-api/actions/workflows/build.yml)
 
 <!--
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=stjepanmamusa_mystats-api&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=stjepanmamusa_mystats-api)
