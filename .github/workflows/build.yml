@@ -6,8 +6,24 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20.x'
+
+      - name: Install, Build and Test
+        run: npm run build:test
+
   sonarcloud:
-    name: SonarCloud
+    name: Static Code Analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
