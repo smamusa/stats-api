@@ -10,6 +10,10 @@ const jestConfig = {
   moduleNameMapper: {
     '^(\\.\\.?\\/.+)\\.js$': '$1',
   },
+  testResultsProcessor: 'jest-sonar-reporter',
+  collectCoverage: true,
+  coverageDirectory: 'src/tests/coverage',
+  verbose: true,
 };
 
 module.exports = jestConfig;
